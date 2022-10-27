@@ -1,0 +1,38 @@
+
+$estilos:(
+    colorVerde:#8CC63E,
+    colorPlomo:#54666F,
+    colorAzul:#1f4591,
+    colortitulo1:#6C685C,
+    colorfondo1:#F7EED2,
+    colorfondo2:#EBE2C7,
+    colorfondo3:#D1C9B2,
+    colorfondo4:#ABA491
+
+
+);
+
+@mixin flexrow{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+@mixin flexcolumn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin tituloh1 {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 3rem;
+    border: 1px solid black; 
+    border-radius: 3rem;  
+    background-color: map-get($estilos,colortitulo1);
+    margin-left: 3rem;
+    margin-right: 3rem; 
+}

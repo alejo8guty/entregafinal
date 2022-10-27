@@ -1,0 +1,31 @@
+/* cambia la medida de texot del menu y color*/
+.nav-link{
+    font-size: 2rem;
+    color: white;
+ 
+}
+/* cambiar y efecto en los botones de los cards*/
+.btn-primary{
+
+    background-color: #8CC63E;
+    border-color: #54666F;
+    transition: all 0.25s ease-out;
+}
+
+:not(.btn-check)+ .btn:hover{
+    background-color: #66922c;
+    border-color: #54666F;
+    transform: scale(0.9);
+}
+
+/* cambia el color del menu hamburguesa*/
+
+.navbar-toggler-icon{
+    background-color: white;
+}
+
+.navbar{--bs-navbar-toggler-border-color:white}
+.navbar>.container-fluid{
+    background-color:  map-get($estilos,colorAzul );
+    padding: 4rem;
+}

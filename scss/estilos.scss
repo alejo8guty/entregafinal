@@ -1,0 +1,245 @@
+/* import */
+
+@import "variables";
+
+
+
+/* cambia la medida del rem, 1rem=10px*/
+html{
+    font-size: 62.5%;
+    }
+    *{
+    font-family: 'Lato', sans-serif;
+    }
+
+
+
+
+    .dimensionesImagSol{
+        width: 30rem;
+        height: 30rem;
+        transition: 2s;
+        
+    }
+    .dimensionesImagSol1{
+        width: 30rem;
+        height: 20rem;
+        padding: 0.2rem;
+        
+    }
+    .dimensionesImagSol2{
+        width: 30rem;
+        height: 40rem;
+        padding: 0.2rem;
+        
+    }
+    .dimensionesImagSol3{
+        /*max-width: 100%;
+        height: auto;*/
+        width: 30rem;
+        height: 20rem;
+        padding: 1rem;
+        
+    }
+    
+    @keyframes animacionlogo{
+        20%{filter:brightness(10%) }
+        50%{transform: rotatey(90deg);}
+        80%{filter:brightness(100%) }
+    }
+    
+    .logoCabecera{
+    
+        animation-name: animacionlogo;
+        animation-duration: 5s;
+        animation-delay: 3s;
+        animation-iteration-count: infinite;
+    }
+
+        /* css para Footer */
+
+    footer {
+            ul{
+             li{
+                font-size: 2rem;
+             }
+            }
+            }
+
+    .redesFlotantes {
+        img{
+        width: 3rem;
+        display: inline-block;
+            }
+                }
+    
+    .whatsapp{
+        position: fixed;
+        z-index: 3;
+        right: 4rem;
+        bottom: 5rem;
+        img{
+        width: 5rem;
+        }
+    }
+
+
+
+.encabezadoMontaje{
+    h1{
+        @include tituloh1
+    }
+    p{
+        max-width: 100%;
+        font-size: 1.5rem;
+        margin: 3rem;
+    }
+}
+.fondomainmontaje
+{    background-color: map-get($estilos,colorfondo1);
+    .accordion-flush{
+        display: none;
+    }
+}
+
+.borde1montaje{
+    display: flex;
+    flex-direction: column;
+
+    h2  {
+        @include tituloh1
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+    
+
+}
+
+.bordemontaje2{
+    background-color: map-get($estilos,colorfondo2);
+    margin: 1rem;
+    h3  {
+        @include tituloh1
+        margin-left: 5rem;
+        margin-right: 5rem; 
+        margin-top: 2rem;
+        padding: 2rem;
+        }
+    p{
+        font-size: 1.6rem;
+        margin: 2rem;
+    }
+}
+
+.contenidoMont{
+    display: flex;
+    flex-direction: row;
+
+    p{
+        max-width: 100%;
+        font-size: 1.8rem;
+        margin: 3rem;
+    }
+    img{
+        width: 20rem;
+        height: 15rem;
+        margin-top: 2rem;
+        margin-right: 5rem;
+    }
+}
+
+.contenidoMont2{
+    p{
+    max-width: 100%;
+    font-size: 2rem;
+    padding: 4rem;
+    background-color: map-get($estilos,colorfondo1);
+    margin: rem;
+    }
+}
+
+.galeriaMontaje{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem;
+    img{    width: 20rem;
+        height: 25rem;}
+}
+
+.bordemonaje3{
+    background-color: map-get($estilos,colorfondo3);
+    margin: 2rem;
+
+    h4{
+        padding-left: 2rem;
+    }
+    ul{
+        padding-left: 6rem;
+        font-size: 1.7rem;
+    }
+
+}
+.contenidoMont3{
+    display: flex;
+    flex-direction: row;
+    margin:1rem;
+    h4{
+    @include tituloh1
+    margin-left: 5rem;
+    margin-right: 5rem; 
+    margin-top: 2rem;
+    padding: 1rem;
+    }
+
+}
+
+.contenidomont4{
+    display: flex;
+    flex-direction: column;
+    background-color: map-get($estilos,colorfondo4);
+    margin: 1rem;
+    max-width: 80%;
+}
+
+.container-fluid{
+
+    padding: 2rem;
+    
+    h2{
+        font-size: 2rem;
+    }
+    
+    p{
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width:768px)
+{
+.imagenMontaje{
+    display: none;
+}
+.contenidoMont3{
+    flex-direction: column;
+    align-items: center;
+}
+
+}
+
+
+@media screen and (max-width:540px)
+{
+
+.accordion-flush{
+    display: block !important;
+}
+.borde1montaje{
+    display: none;
+}
+}
+@import "bootstrap";
+@import "GridIndex";
+@import "GridMtto";
+@import "GridLimp";
+@import "GridContacto";

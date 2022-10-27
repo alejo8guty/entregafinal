@@ -1,0 +1,150 @@
+/*  grid para la pagina de Mantenimiento */
+
+.contenedorMtto{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.tituloMtto{
+    h1{
+        @include tituloh1;
+
+    }
+    p{
+        font-size: 1.5rem;
+        max-width: 100%;
+        margin: 2rem;
+    }
+}
+
+.galeriaMtto{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: map-get($estilos,colorfondo2);
+    margin: 3rem;
+    padding: 1rem;
+}
+.galeria1Mtto{
+    display: flex;
+    flex-direction: column;
+   
+
+   img{width: 30rem;
+    height: 20rem;}
+}
+
+.galeria2Mtto{
+
+    display: flex;
+    flex-direction: column;
+    flex-flow:column wrap;
+    align-items: flex-start;
+
+    h3{ @include tituloh1;
+        padding: 1.5rem;
+    }
+
+   p{ font-size: 1.5rem;
+    width: 50rem;
+    margin: 2rem;
+    }
+}
+.contenidoProdMtto{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p{
+        font-size: 1.5rem;
+        margin: 2rem;
+    }
+
+   img{
+    max-width: 100%;
+    height: auto;
+    margin: 3rem;
+   }
+   h3{
+    @include tituloh1;
+    padding: 1rem;
+   }
+}
+
+.mttocuadrototal{
+    display: flex;
+    flex-direction: column;
+    background-color: map-get($estilos,colorfondo3);
+    margin: 2rem;
+    padding: 1rem;
+}
+.filamtto{
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.columnamtto{
+    display: flex;
+    flex-direction: column;
+    background-color: map-get($estilos,colorfondo4);
+    border: 1px solid black; 
+    border-radius: 3rem;
+    justify-content: space-around;
+    align-items: center;
+    width: 30rem;
+    margin:1rem;
+    h4{@include tituloh1;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+
+}
+
+
+.footerMantenimiento{
+@extend .ordenFooter_Indx
+
+
+}
+
+@media screen and (max-width:768px)
+{ 
+    .galeriaMtto{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .galeria2Mtto{
+       align-items: center;
+    h3{margin: 1rem;}
+
+       p{
+    width: 90%;
+    margin: 2rem;
+    }
+
+    }
+
+    .imagencadenas2
+    {display:none;}
+
+
+}
+
+@media screen and (max-width:540px)
+{ 
+     
+    .galeria1Mtto{
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+
+

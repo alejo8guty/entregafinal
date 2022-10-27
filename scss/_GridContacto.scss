@@ -1,0 +1,27 @@
+.contenedorContacto{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footerContacto{
+
+    @extend .ordenFooter_Indx
+
+}
+
+@media screen and (max-width:768px)
+{
+    .imgContacto{
+        display: none;
+    }
+}
+@media screen and (max-width:570px)
+{
+    .imgContacto{
+        display: none;
+    }
+
+    
+}  
+
+  

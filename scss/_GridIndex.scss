@@ -1,0 +1,188 @@
+/*  grid para la pagina de Index se us VH o FR */
+
+
+.card{
+    width: 32rem;
+}
+
+.contenedorIndx{
+    display: flex;
+    flex-direction: column;
+}
+
+.principal__titulo{
+
+   h1{ @include tituloh1;}
+}
+
+.solucionImg{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   
+    img{
+        max-width: 100%;
+        height: auto;
+        img:hover{
+            height: 35rem;
+            width: 35rem;
+                }
+    }
+
+}
+
+
+.lineaindx{
+
+    margin: 1rem;
+    hr{
+    color: map-get($estilos,colorVerde);
+    }
+}
+.ordenquienesomos
+{ background-color: map-get($estilos,colorfondo2 );
+    margin: 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+   
+}
+.quienessomos{
+    display: flex;
+    flex-direction: column;
+
+
+
+    h2{
+        @include tituloh1;
+        font-size: 2rem;
+        padding: 1.5rem;
+        margin-left: 10rem;
+        margin-right: 10rem; 
+    }
+}
+.contenidoQS{
+     
+      p{
+        margin: 4rem;
+        font-size: 2rem;
+        width: 70rem;
+        }
+    }
+
+
+.imagenlogo{
+
+    img{
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    height: auto;
+    max-width: 50%;
+    }
+}
+
+.principiosGamma{
+
+
+    font-size: 2.6rem;
+}
+
+
+.ordenFooter_Indx
+{
+    display: flex;
+    flex-direction: column;
+    background-color: map-get($estilos,colorAzul );
+  
+}
+.primerfooter
+{
+   padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+
+    a{ /* quitamos la lineas de los url*/
+        text-decoration: none; }
+
+    ul{ /* quitmaos las vinetas d elas litas*/
+        list-style-type: none;
+    li{    color: white;}
+    }
+}
+.segundofooter
+{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    p{ color: white;
+    
+    font-size: 1.2rem;
+    margin-left: 2rem;}
+
+}
+
+
+@media screen and (max-width:1000px)
+{
+    .card{
+        width: 20rem;
+        p{
+            font-size: 1.6rem;
+        }
+        li{
+            font-size: 1.4rem;
+        }
+        a{ font-size: 1.4rem;}
+    }
+    .ordenquienesomos{
+        flex-direction: column;
+        align-items: center;
+        flex-flow: column wrap;
+    }
+    .contenidoQS{
+        p{
+            padding: 2rem;
+            width: auto;
+        }
+    }
+}
+
+@media screen and (max-width:660px)
+{
+    .card{
+        width: 15rem;
+        p{
+            font-size: 1.6rem;
+        }
+        li{
+            font-size: 1.4rem;
+        }
+        a{ font-size: 1.4rem;}
+    }
+
+}
+@media screen and (max-width:480px)
+{
+
+    .card{
+        width: 23rem;
+        p{
+            font-size: 1.5rem;
+        }
+        li{
+            font-size: 1.3rem;
+        }
+        a{ font-size: 1.3rem;}
+    }
+
+    .solucionImg{
+        flex-direction: column;
+        align-items: center;
+        align-content: space-around;
+    }
+
+}
