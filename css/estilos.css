@@ -1,0 +1,112 @@
+
+/* CSS */
+/* cambia la medida del rem, 1rem=10px*/
+html{
+font-size: 62.5%;
+}
+
+/*colores de la empresa*/
+
+
+
+
+
+
+/*La fuente a usar en la web */
+
+
+
+/*CSS del Header 
+
+header{
+    background-color: white;
+    /* position: sticky;
+    top: 0;
+}
+.menuPrincipal{
+
+    height:14rem;
+    background-color: #1f4591;
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.menuPrincipal a{
+    color: white;
+    font-size: 2rem;
+}
+.menuPrincipal ul li{
+display: inline-block;
+padding: 2rem;
+}
+.logoCabecera{
+    height: 8rem;
+}*/
+
+
+/*CSS del header Nav */
+
+/* css para toda la paginas */
+
+
+
+
+
+
+
+
+
+
+/*.parallax{ /* efecto parallax 
+    background-image: url("/Media/oks-selectieMain.jpg");
+    height: 600px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:  cover;
+	height:30rem;
+	max-width: 100%;
+	position: relative
+}*/
+
+
+
+
+/* css para pagin de contacto*/
+.espacioCajas{
+   /*margin:2rem 140rem 2rem 2rem;*/
+   display: block;
+    padding:1rem;
+    margin: 1rem;
+}
+
+
+
+/* css para Main */
+
+
+/* sintaxis para textos
+
+.tituloContacto{
+color:blank;
+font-style:italic;/*
+font-weight:bold;
+font-family:arial,helvetica,sans-serif;
+text-align:center;
+line-height:2;
+text-decoration:underline;
+.principal__subtitulo{
+font-size: 20px;
+background-color: yellow;
+
+
+
+}
+
+}*/
+
+
+

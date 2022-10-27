@@ -1,0 +1,683 @@
+
+/* CSS */
+/* cambia la medida del rem, 1rem=10px*/
+html{
+font-size: 62.5%;
+}
+
+/*colores de la empresa*/
+.contenidoQS{
+    color:#1f4591;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.contenidoQS img{
+    width: 15rem;
+    height: 16rem;
+    margin-right: 80px;
+}
+.contenidoQS p{
+    max-width: 100%;
+}
+
+
+.colorVerde{
+    color:#8CC63E;
+}
+.colorPlomo{
+    color:#54666F;
+}
+
+
+/*La fuente a usar en la web */
+*{
+    font-family: 'Lato', sans-serif;
+   /* background-color: rgb(242, 239, 239);*/
+    }
+
+
+/*CSS del Header 
+
+header{
+    background-color: white;
+    /* position: sticky;
+    top: 0;
+}
+.menuPrincipal{
+
+    height:14rem;
+    background-color: #1f4591;
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.menuPrincipal a{
+    color: white;
+    font-size: 2rem;
+}
+.menuPrincipal ul li{
+display: inline-block;
+padding: 2rem;
+}
+.logoCabecera{
+    height: 8rem;
+}*/
+
+
+/*CSS del header Nav */
+
+/* css para toda la paginas */
+a{ /* quitamos la lineas de los url*/
+    text-decoration: none;
+
+}
+ul{ /* quitmaos las vinetas d elas litas*/
+    list-style-type: none;
+    /*font-size: 0  truco para el uso de inline-block*/
+    }
+
+h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.solucionesTextoGamma
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.solucionesTextoGamma img:hover{
+
+    height: 30rem;
+    width: 30rem;
+    padding-bottom: 3rem;
+    
+}
+
+
+.ordenSoluciones
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.separarTextoSolucion
+{
+    padding: 1rem;
+}
+
+
+
+
+/*.parallax{ /* efecto parallax 
+    background-image: url("/Media/oks-selectieMain.jpg");
+    height: 600px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:  cover;
+	height:30rem;
+	max-width: 100%;
+	position: relative
+}*/
+
+
+
+
+/* css para pagin de contacto*/
+.espacioCajas{
+   /*margin:2rem 140rem 2rem 2rem;*/
+   display: block;
+    padding:1rem;
+    margin: 1rem;
+}
+
+
+
+/* css para Main */
+main a{
+    font-size: 2rem;
+}
+
+.dimensionesImagSol{
+    width: 30rem;
+    height: 30rem;
+    transition: 2s;
+    
+}
+.dimensionesImagSol1{
+    width: 15rem;
+    height: 15rem;
+    padding: 1rem;
+    
+}
+.dimensionesImagSol2{
+    width: 30rem;
+    height: 32rem;
+    padding: 1rem;
+    
+}
+.dimensionesImagSol3{
+    width: 12rem;
+    height: 12rem;
+    padding: 1rem;
+    
+}
+
+.principal__titulo{
+    font-size: 4rem;
+    text-align:center;
+    font-weight:bold;
+
+}
+.quienesSomos h2{
+    font-size: 2rem;
+    color:#8CC63E;
+    text-align:center;
+    font-weight:bold;
+
+}
+.quienesSomos p{
+    width: 125rem;
+    text-align: center;
+    margin: 4rem;
+    font-size: 2rem;
+
+}
+    
+/* css para Footer */
+
+footer ul li{
+    font-size: 2rem;
+
+}
+.redesFlotantes img{
+    width: 3rem;
+    display: inline-block;
+    
+    }
+    
+    .whatsapp{
+        position: fixed;
+        right: 4rem;
+        bottom: 5rem;
+    }
+    .whatsapp img{
+        width: 5rem;
+        
+    }
+
+/* sintaxis para textos
+
+.tituloContacto{
+color:blank;
+font-style:italic;/*
+font-weight:bold;
+font-family:arial,helvetica,sans-serif;
+text-align:center;
+line-height:2;
+text-decoration:underline;
+.principal__subtitulo{
+font-size: 20px;
+background-color: yellow;
+
+
+
+}
+
+}*/
+
+/*  grid para la pagina de limpiadores */
+
+.contenedorLim{
+   
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 2fr 1fr 1fr;
+    grid-template-areas: 
+
+    "titulo titulo"
+    "contenido contenido"
+    "galeria1 galeria3"
+    "galeria2 galeria3";
+    
+}
+
+.tituloLim{
+    grid-area: titulo;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contenidoProdLim{
+
+    grid-area: contenido;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.contenidoProd1Lim{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contenidoProd2Lim
+{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.contenidoProd1Lim p{
+    width: 50rem;
+    font-size: 2rem;
+}
+.contenidoProd2Lim p{
+    width: 50rem;
+    font-size: 2rem;
+}
+
+.galeria1Limp{
+    grid-area:galeria1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+
+}
+.galeria2Limp{
+
+    grid-area:galeria2;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+.galeria3Limp{
+
+    grid-area:galeria3;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+}
+
+.footerlimpiadores{
+
+    padding-top: 2rem;
+    background-color: #1f4591;
+    grid-area: footer;
+    display: flex wrap;
+    justify-content: space-around;
+    color: white;
+
+}
+
+@media screen and (max-width:768px)
+{ .contenedorLim{
+   
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:  0.5fr 2fr 1fr 1fr;
+    grid-template-areas: 
+    "titulo titulo"
+    "contenido contenido"
+    "galeria1 galeria2";
+                }
+
+    .galeria2Limp{
+        justify-content: flex-start;
+                }
+    .galeria3Limp{
+        display: none;
+    }  
+}
+
+@media screen and (max-width:540px)
+{ .contenedorLim{
+   
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:  0.2fr 1fr 0.5fr 0.5fr;
+    grid-template-areas: 
+   
+    "titulo"
+    "contenido"
+    "galeria1"
+    "galeria2";
+}
+
+    .contenidoProd1Lim{
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: center;  
+    }
+
+    .dimensionesImagSol3{
+        width: 20rem;
+        height: 20rem;}
+
+    .dimensionesImagSol1{
+            width: 30rem;
+            height: 30rem;}
+
+    .galeria2Limp{
+        justify-content: center;
+    }
+
+    .galeria1Limp{ 
+       justify-content: center;
+    }
+    .galeria3Limp{
+        display: none;
+    }
+    .h1{
+        font-size: 6rem;
+    }
+
+    
+}
+
+/*  grid para la pagina de Mantenimiento */
+
+.contenedorMtto{
+   
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 2fr;
+    grid-template-areas: 
+
+    "titulo titulo"
+    "galeria1 galeria3"
+    "galeria2 galeria3"
+    "contenido contenido";
+
+    
+}
+
+.tituloMtto{
+    grid-area: titulo;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+.galeria1Mtto{
+    grid-area:galeria1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+
+}
+.galeria2Mtto{
+
+    grid-area:galeria2;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+.galeria3Mtto{
+
+    grid-area:galeria3;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+}
+.contenidoProdMtto{
+
+    grid-area: contenido;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.contenidoProd1Mtto{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contenidoProd2Mtto
+{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.contenidoProd1Mtto p{
+    width: 50rem;
+    font-size: 2rem;
+}
+.contenidoProd2Mtto p{
+    width: 50rem;
+    font-size: 2rem;
+}
+.footerMantenimiento{
+
+    padding-top: 2rem;
+    background-color: #1f4591;
+    grid-area: footer;
+    display: flex wrap;
+    justify-content: space-around;
+    color: white;
+
+}
+
+@media screen and (max-width:768px)
+{ .contenedorMtto{
+   
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:  0.5fr 2fr 1fr 1fr;
+    grid-template-areas: 
+    "titulo titulo"
+    "contenido contenido"
+    "galeria1 galeria2";
+                }
+
+    .galeria2Mtto{
+        justify-content: flex-start;
+                }
+    .galeria3Mtto{
+        display: none;
+    }  
+}
+
+@media screen and (max-width:540px)
+{ .contenedorMtto{
+   
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:  0.2fr 1fr 0.5fr 0.5fr;
+    grid-template-areas: 
+   
+    "titulo"
+    "contenido"
+    "galeria1"
+    "galeria2";
+}
+
+    .contenidoProd1Mtto{
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: center;  
+    }
+
+    .dimensionesImagSol3{
+        width: 20rem;
+        height: 20rem;}
+
+    .dimensionesImagSol1{
+            width: 30rem;
+            height: 30rem;}
+
+    .galeria2Mtto{
+        justify-content: center;
+    }
+
+    .galeria1Mtto{ 
+       justify-content: center;
+    }
+    .galeria3Mtto{
+        display: none;
+    }
+    .h1{
+        font-size: 6rem;
+    }
+
+    
+}
+
+
+
+/*  grid para la pagina de Index se us VH o FR */
+
+.contenedorIndx{
+   
+    display: grid;
+    grid-template-columns: 1320px;
+    grid-template-rows: 400px 300px 150px;
+
+    grid-template-areas: 
+    "Soluciones"
+    "Quienesomos"
+    "footer";
+}
+    
+
+.principal{
+    grid-area: Soluciones;
+}
+
+.quienesSomos{
+    grid-area: Quienesomos;
+}
+.ordenFooter_Indx
+{
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+    background-color: #1f4591;
+}
+
+
+@media screen and (max-width:768px)
+{
+    .contenedorIndx{
+   
+        display: grid;
+        grid-template-columns: 960px;
+        grid-template-rows: 300px 350px 200px;
+        grid-template-areas: 
+        
+        "Soluciones"
+        "Quienesomos"
+        "footer";
+    
+    }    
+
+.dimensionesImagSol{
+    width: 20rem;
+    height: 20rem;
+    }
+
+.ordenFooter_Indx{
+
+    flex-flow: column wrap;
+}
+.contenidoQS{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+@media screen and (max-width:570px)
+{
+    .contenedorIndx{
+   
+        display: grid;
+        grid-template-columns: 540px;
+        grid-template-rows: 800px 500px 200px;
+        grid-template-areas: 
+        
+        "Soluciones"
+        "Quienesomos"
+        "footer";
+    
+    }    
+
+  
+    .ordenSoluciones
+    {
+    flex-direction: column;
+    align-items: stretch;
+
+    }
+    .dimensionesImagSol{
+    width: 20rem;
+    height: 20rem;
+    }
+
+}
+
+/* cambia la medida de texot del menu y color*/
+.nav-link{
+    font-size: 2rem;
+    color: white;
+}
+/* cambiar y efecto en los botones de los cards*/
+.btn-primary{
+
+    background-color: #8CC63E;
+    border-color: #54666F;
+    transition: all 0.25s ease-out;
+}
+
+:not(.btn-check)+ .btn:hover{
+    background-color: #66922c;
+    border-color: #54666F;
+    transform: scale(0.9);
+}
+
+/* cambia el color del menu hamburguesa*/
+
+.navbar-toggler-icon{
+    background-color: white;
+}
+
+.navbar{--bs-navbar-toggler-border-color:white}
+.navbar>.container-fluid{
+    background-color: #1f4591;
+}
+
+@keyframes animacionlogo{
+    20%{filter:brightness(10%) }
+    50%{transform: rotatey(90deg);}
+    80%{filter:brightness(100%) }
+}
+
+.logoCabecera{
+
+    animation-name: animacionlogo;
+    animation-duration: 5s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+}
