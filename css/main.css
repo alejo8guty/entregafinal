@@ -42,6 +42,9 @@ html {
   animation-delay: 3s;
   animation-iteration-count: infinite; }
 
+.navbar-nav a {
+  margin: 1.3rem; }
+
 /* css para Footer */
 footer ul li {
   font-size: 2rem; }
