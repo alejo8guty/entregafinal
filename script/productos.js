@@ -25,7 +25,7 @@ const productosOKS=[
     precio:	1500,
     categoria: 	"Pastas montaje y desmontaje",
     oferta:	true,
-    img: "../media/",
+    img: "../imagenes/oks-200.jpeg"
 },
         
 {    id: 33,
@@ -43,9 +43,120 @@ const productosOKS=[
     precio:	1300,
     categoria: 	"Pastas montaje y desmontaje",
     oferta:	false,
-    img: 	"../media",
+    img:  "../media",
 },    
- 
+{
+    id: 34	
+    producto: 	"OKS 2610 – Limpiador universal",
+    descripcion :	"Limpiador universal de evaporación sin residuos para la limpieza de componentes de máquina y superficies de los materiales.",
+    precio: 980,	
+    categoria: 	"Limpiadores de lubricantes",
+    oferta:	false,
+    img: "../media",
+},
+
+{
+    id: 15,	
+    producto: 	"OKS 2650 – Limpiador industrial BIOlogic, concentrado de base acuosa",
+    descripcion :	"OKS 2650, potente limpiador biodegradable alcalino de base acuosa de fabricación alemana. para eliminar suciedades de todo tipo, restos de aceite, grasa u hollín. para todo tipo de industrias y talleres; concentrado, se puede diluir dependiendo del grado de suciedad y el área a aplicar.",
+    precio: 1250,	
+    categoria: "Limpiadores de lubricantes",
+    oferta:	false,
+    img: "../media",
+},
+{
+    producto: "OKS 2681 – Removedor de adhesivos y pintura, aerosol",
+    descripcion :	"Le invitamos a probar nuestro removedor o limpiador OKS 2681 altamente eficaz para la eliminación de residuos resistentes tales como los residuos de sellado, pintura y adhesivos en aplicaciones industriales, comerciales y de taller.",
+    categoria: 	"Limpiadores de lubricantes",
+    precio: 2000,	
+    id: 23	
+    oferta:	false,
+    img: "../media",	
+},
+{
+    producto: 	"OKS 340 – Protector de cadenas, gran adherencia",
+    descripcion :	"Lubricante adherente sintético para componentes mecánicos en áreas interiores y exteriores, expuestos a altas presiones o bajo influencia de la corrosión.",
+    categoria: 	"Aceite con aditivos",
+    precio	1930,
+    id: 55	
+    oferta:	true,
+    img: 	"../media",
+},	
+
+{
+producto: 	"OKS 370 – Aceite universal para la industria alimenticia",
+descripcion :	"Aceite universal incoloro para la industria alimenticia.",
+categoria: 	"Aceite con aditivos",
+precio: 1450,
+id: 34,	
+oferta: false,	
+img:"../media", 	
+},
+{	
+producto: 	"OKS 3760 – Aceite multiuso para la industria alimenticia",
+descripcion :	"Aceite sintético para el cuidado y limpieza de herramientas finas y mecanismos sensibles.",
+categoria: 	"Aceite con aditivos",
+precio: 4300,	
+id: 9,	
+oferta:	false,
+img: "../media",	
+},
+{	
+producto: "OKS 1140 – Grasa de silicona para las más altas temperaturas",
+descripcion : "OKS 1140 es una grasa de silicona para más alta temperatura para componentes mecánicos de funcionamiento lento a temperaturas extremadamente elevadas.",
+categoria: 	"Grasas condiciones críticas",
+precio:	2370,
+id: 14,
+oferta:	false,
+img: "../media",	
+},
+{	
+producto: 	"OKS 402 – Grasa de altas prestaciones para rodamientos",
+descripcion :	"Grasa multiuso para la lubricación de componentes mecánicos de carga normal.",
+categoria: 	"Grasas condiciones críticas",
+precio:800,	
+id: 27,	
+oferta:	false,
+img: "../media",	
+},
+
+{	
+producto: 	"OKS 4100 – MoS₂-grasa de presión máxima",
+descripcion :"OKS 4100 es una pasta de alta temperatura con MoS₂ para rodamientos y cojinetes de fricción de marcha lenta sometidos a cargas muy altas y bruscas.",
+categoria: 	"Grasas condiciones críticas",
+precio:	680,
+id: 40,
+oferta:	true,
+img: "../media",	
+},
+{	
+producto: "OKS 450 – Lubricante para cadenas y lubricante adherente, transparente",
+descripcion :	"Lubricante adherente completamente sintético para la lubricación de cadenas de alta velocidad y componentes mecánicos en áreas interiores y exteriores, expuestos a cargas elevadas o bajo influencia de la corrosión.",
+categoria: "Grasas condiciones críticas",
+precio:	1450,
+id: 77,	
+oferta:	false,
+img: "../media",	
+},
+{	
+producto: 	"OKS 110 – Polvo de MoS₂, microfino",
+descripcion :"OKS 110 es un polvo de MoS₂ para la mejora de las propiedades de deslizamiento de los componentes mecánicos.",
+categoria: 	"Lubricantes secos",
+precio: 550,
+id: 13,	
+oferta:	false,
+img: "../media",	
+},
+{	
+producto: 	"OKS 510 – Laca lubricante MoS₂, secado rápido",
+descripcion :	"Laca lubricante de secado al aire a base de MoS₂ para la lubricación seca de componentes mecánicos durante funcionamiento temporal y en tiempos de inactividad prolongados.",
+categoria: 	"Lubricantes secos",
+precio: 1500,
+id: 20	
+oferta:	false,
+img: "../media",	
+},
+
 ]
 // 2) Utilizar un método de array que verifique si oferta es true, en el caso de que lo sea, haga un 15%, 5%, 20%, 10% de descuento (elijan el descuento que quieran).
 
