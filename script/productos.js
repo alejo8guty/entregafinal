@@ -1,4 +1,23 @@
 // CASO ECOMMERCE
+//variables de registro
+const formRegistro = document.querySelector("#registro")
+const nuevoUser = document.querySelector("#nuevo-user")
+const nuevoPass = document.querySelector("#nuevo-pass")
+const nuevoIncorrecto = document.querySelector("#nuevoint")
+
+
+//variables de logeo
+const formLogin = document.querySelector("#login")
+const inputUser = document.querySelector("#input-user")
+const inputPass = document.querySelector("#input-pass")
+
+
+
+
+const loginIncorrecto = document.querySelector("#logint")
+const contenedorForm = document.querySelector(".container-login")
+const logout = document.querySelector("#logout")
+
 
 // * TODO TIENEN QUE ESTAR DENTRO DE FUNCIONES
 // * LA ÚNICA VARIABLE GLOBAL VA A SER LA DEL ARRAY
@@ -15,6 +34,173 @@
 
 // Quiero que algunos de los elementos tengan un true en oferta.
 
+// para hacer una función que nos sirva para subir valores al ls
+// 1) un valor a convertir con JSON.stringify
+// 2) una clave que le proporcione un nombre a ese valor que se suba
+
+const datosUsuario = {
+    user: "alejandro",
+    password: "ruffus22"
+}
+
+
+
+// const usuarioConEmail="alejo.gmail.com"
+// const contrasenia="12345"
+
+
+
+function validar(mail,password)
+{
+    if (mail!=datosUsuario.user && password!=datosUsuario.password){alert("Erro de login, usuario y password erroneos")
+                                                        return false
+                                                    }
+    else if (mail!=usuarioConEmail){alert("Error de login, Usuario no coincide")
+                                                        return false}
+    else if (password!=contrasenia){alert("Error de login, passsword no coincide")
+                                                        return false}
+  
+    else {alert("Bienvenido " + usuarioName)
+            return true}
+    
+
+}
+
+
+function tienearroba(usuarioEmail)
+{
+
+let accarroba = 0
+  
+for ( let i = 0; i < usuarioEmail.length; i++ ) { 
+  
+   if ( usuarioEmail[i].match(/[@]/)) {
+    
+        accarroba=accarroba+1     
+       
+    }
+}
+
+if (accarroba==0)
+{
+    alert("Debe ingresar un usuario un email con @ arroba")
+    return false
+}
+else
+    {
+    return true
+    }
+
+}
+
+
+function passwordAlfanumerico(usuarioPassword){
+
+        let accnumero = 0
+
+        for ( let i = 0; i < usuarioPassword.length; i++ )
+         { 
+           if ( usuarioPassword[i].match(/[0123456789]/)) {
+            accnumero = accnumero + 1 }
+        }
+        console.log(accnumero)
+
+        if (accnumero==0) 
+        {
+        
+        alert("Elige otra password por que este no tiene al menos un numero del 0 al 9")
+        return true
+        }
+        else
+        {
+            return false
+        }
+    }
+
+
+
+function passwordCantidad(usuarioPassword){
+
+    
+            if (usuarioPassword.length<8)
+            {alert("Su password debe tener al menos 8 caracteres")
+                return false
+            }
+            else
+            {return true
+            }
+    
+    }
+
+
+
+
+// usuario nuevo
+formRegistro.onsubmit = ( event ) => {
+    event.preventDefault()
+    tienearroba(nuevoUser.value)
+    passwordAlfanumerico(nuevoPass.value)
+    passwordCantidad(nuevoPass.value)
+    alert("Felicidades " + nuevoUser.value + "!!, Su password ahora es mas seguro")
+
+}
+
+
+
+
+
+
+
+
+
+// codigo para el login
+
+const subirAlLs = ( clave, valor ) => {
+    localStorage.setItem(clave, JSON.stringify(valor))
+}
+
+const obtenerDelLs = ( clave ) => {
+    return JSON.parse(localStorage.getItem(clave))
+}
+
+formLogin.onsubmit = ( event ) => {
+    event.preventDefault()
+    if ( inputUser.value === datosUsuario.user && inputPass.value === datosUsuario.password ) 
+    {
+        subirAlLs("login", true)
+        contenedorForm.style.display = "none"  
+        logout.style.display = "block"      
+        contenedorPokemon.style.display = "none"        
+    } else {        
+        loginIncorrecto.style.display = "block"
+        inputPass.style.border = "1px solid red"
+        inputUser.style.border = "1px solid red"
+        contenedorPokemon.style.display = "flex"
+    }
+}
+
+// esta función valida si existe un token en el localStorage
+// también verifica su valro, es decir, si este es diferente a true, que es el valor que subimos desde el envío del formulario (onsubmit), entonces signiifca que el usuario no se pudo loggear
+
+function validarLogin ( clave ) {
+    if ( clave !== true ) {
+        contenedorForm.style.display = "flex"
+        logout.style.display = "none"
+        contenedorPokemon.style.display = "none"        
+    } else {
+        contenedorForm.style.display = "none"
+        logout.style.display = "block"
+        contenedorPokemon.style.display = "flex"        
+    }
+}
+
+// evento que deslogea a mi usuario
+
+logout.onclick = () => {
+    localStorage.removeItem( "login" )
+    validarLogin(obtenerDelLs("login"))
+    formLogin.reset()
+}
 
 
 const productosOKS=[
@@ -217,7 +403,11 @@ function buscarproducto(){
     }
 }
 
-verificaroferta()
-ordenarporid()
-productosenoferta()
-buscarproducto()
+
+validarLogin(obtenerDelLs("login"))
+
+
+// verificaroferta()
+// ordenarporid()
+// productosenoferta()
+// buscarproducto()
