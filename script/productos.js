@@ -10,14 +10,14 @@ const nuevoIncorrecto = document.querySelector("#nuevoint")
 const formLogin = document.querySelector("#login")
 const inputUser = document.querySelector("#input-user")
 const inputPass = document.querySelector("#input-pass")
-
-
-
-
 const loginIncorrecto = document.querySelector("#logint")
 const contenedorForm = document.querySelector(".container-login")
 const logout = document.querySelector("#logout")
 
+//Variables para mostrar productos
+const listanormalOKS = document.querySelector(".productos-oks")
+const listaofertaslOKS = document.querySelector(".productos-oks-ofertas")
+const botonOfertasOKS=document.querySelector(".botonMostrar")
 
 // * TODO TIENEN QUE ESTAR DENTRO DE FUNCIONES
 // * LA ÚNICA VARIABLE GLOBAL VA A SER LA DEL ARRAY
@@ -215,21 +215,21 @@ const productosOKS=[
 },
         
 {   "id": 33,
-    "producto": 	"OKS 240",
+    "producto": "OKS 240",
     "descripcion" :	"Pastas para facilitar el montaje y el desmontaje, OKS 240 Pasta antiagarrotamiento por calor (pasta de cobre) Pasta de tornillería de alta temperatura a base de cobre para evitar la corrosión, el agarrotamiento y el atascamiento.",
     "precio":	800,
-    "categoria": 	"Pastas montaje y desmontaje",
+    "categoria": "Pastas montaje y desmontaje",
     "oferta":	false,
     "img": 	"../imagenes/oks240.jpeg",
 },
 {       
     "id": 21,
     "oferta":	false,
-    "producto": 	"OKS 1105",
+    "producto": "OKS 1105",
     "descripcion" :	"OKS 1105 impide la formación de capas conductoras de electricidad y minimiza el riesgo de saltos de chispa y las pérdidas dieléctricas. Los aisladores y las instalaciones de conmutación cubiertos con la pasta conservan una buena resistencia de aislamiento.",
     "precio":	1300,
-    "categoria": 	"Pastas montaje y desmontaje",
-    "img":  "../media/imagenes/oks-1105.jpeg",
+    "categoria": "Pastas montaje y desmontaje",
+    "img":  "../imagenes/oks-1105.jpeg",
 },    
 {
     "id": 32,	
@@ -238,7 +238,7 @@ const productosOKS=[
     "descripcion" :	"Limpiador universal de evaporación sin residuos para la limpieza de componentes de máquina y superficies de los materiales.",
     "precio": 980,	
     "categoria": 	"Limpiadores de lubricantes",
-    "img": "../media/imagenes/oks-2610.jpeg",
+    "img": "../imagenes/oks-2610.jpeg",
 },
 
 // {
@@ -248,7 +248,7 @@ const productosOKS=[
 //     descripcion :	"OKS 2650, potente limpiador biodegradable alcalino de base acuosa de fabricación alemana. para eliminar suciedades de todo tipo, restos de aceite, grasa u hollín. para todo tipo de industrias y talleres; concentrado, se puede diluir dependiendo del grado de suciedad y el área a aplicar.",
 //     precio: 1250,	
 //     categoria: "Limpiadores de lubricantes",
-//     img: "../media/imagenes/oks-2650.jpeg",
+//     img: "../imagenes/oks-2650.jpeg",
 // },
 // {   id: 23,	
 //     oferta:	false,
@@ -256,7 +256,7 @@ const productosOKS=[
 //     descripcion :	"Le invitamos a probar nuestro removedor o limpiador OKS 2681 altamente eficaz para la eliminación de residuos resistentes tales como los residuos de sellado, pintura y adhesivos en aplicaciones industriales, comerciales y de taller.",
 //     categoria: 	"Limpiadores de lubricantes",
 //     precio: 2000,	
-//     img: "../media/imagenes/oks-2681.jpeg",	
+//     img: "../imagenes/oks-2681.jpeg",	
 // },
 // {   id: 55,	
 //     oferta:	true,
@@ -367,8 +367,7 @@ function ordenarporid()
 const ordenaID=[...productosOKS].sort((a, b) => {
     return a.id-b.id
 })
-console.log(productosOKS)
- console.log(ordenaID)
+cardsHtml(ordenaID,".productos-oks-ofertas")
 }
 
 
@@ -407,14 +406,14 @@ validarLogin(obtenerDelLs("login"))
 
 
 // verificaroferta()
-// ordenarporid()
+ordenarporid()
 // productosenoferta()
 // buscarproducto()
 
 
-function cardsHtml ( array ) {
+function cardsHtml ( array,contenido) {
 
-    const contenedor = document.querySelector(".productos-oks")
+    const contenedor = document.querySelector(contenido)
 
     array.forEach( ( itemoks ) => {
         const card = document.createElement("div")
@@ -435,4 +434,17 @@ function cardsHtml ( array ) {
 
 }
 
-cardsHtml(productosOKS)
+cardsHtml(productosOKS,".productos-oks")
+
+
+
+// const eventoCategorias =(boton, nodo1, nodo2) => {
+//     boton.onclick=() => {
+//         nodo1.style.display="flex"
+//         nodo2.style.display="none"
+//     }
+
+// }
+
+// eventoCategorias(botonOfertasOKS,listaofertaslOKS,listanormalOKS )
+
