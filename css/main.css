@@ -136,6 +136,11 @@ footer ul li {
   display: flex;
   flex-direction: row; }
 
+  .nuevo-usuario{
+    display: flex;
+    flex-direction: column;
+  }
+
 .nuevo-usuario h2 {
   color: white;
   text-align: center;
@@ -161,6 +166,11 @@ footer ul li {
   .nuevo-usuario form label {
     padding: 0.8rem;
     width: 25rem; }
+
+.container-login{
+  display: flex;
+  flex-direction: column;
+}
 
 .container-login h2 {
   color: white;
