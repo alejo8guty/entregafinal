@@ -108,7 +108,7 @@ html{
     flex-direction: column;
 
     h2  {
-        @include tituloh1
+        @include tituloh1;
         padding: 2rem;
         margin-top: 2rem;
     }
@@ -120,7 +120,7 @@ html{
     background-color: map-get($estilos,colorfondo2);
     margin: 1rem;
     h3  {
-        @include tituloh1
+        @include tituloh1;
         margin-left: 5rem;
         margin-right: 5rem; 
         margin-top: 2rem;
@@ -148,6 +148,70 @@ html{
         margin-right: 5rem;
     }
 }
+.registro-usuarios
+{
+
+    display: flex;
+    flex-direction: row;
+}
+.nuevo-usuario{
+
+    display: flex;
+    flex-direction: column;
+h2{
+    @include tituloh1;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+form{
+    width: 40rem;
+    padding: 2rem;
+    margin: 2rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.5rem;
+    label{
+        padding: 0.8rem;
+        width: 25rem;
+
+
+        
+    }
+}
+}
+
+.container-login{
+
+    display: flex;
+    flex-direction: column;
+
+    h2{
+        @include tituloh1;
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+    form{
+        width: 40rem;
+        padding: 2rem;
+        margin: 2rem;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 0.5rem;
+        label{
+            padding: 0.8rem;
+            width: 25rem;
+    
+    
+            
+        }
+    }
+    
+}
+
 
 .contenidoMont2{
     p{
@@ -186,7 +250,7 @@ html{
     flex-direction: row;
     margin:1rem;
     h4{
-    @include tituloh1
+    @include tituloh1;
     margin-left: 5rem;
     margin-right: 5rem; 
     margin-top: 2rem;

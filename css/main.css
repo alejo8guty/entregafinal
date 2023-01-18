@@ -132,6 +132,62 @@ footer ul li {
     margin-top: 2rem;
     margin-right: 5rem; }
 
+.registro-usuarios {
+  display: flex;
+  flex-direction: row; }
+
+.nuevo-usuario h2 {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 3rem;
+  border: 1px solid black;
+  border-radius: 3rem;
+  background-color: #6C685C;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  padding: 2rem;
+  margin-top: 2rem; }
+
+.nuevo-usuario form {
+  width: 40rem;
+  padding: 2rem;
+  margin: 2rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.5rem; }
+  .nuevo-usuario form label {
+    padding: 0.8rem;
+    width: 25rem; }
+
+.container-login h2 {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 3rem;
+  border: 1px solid black;
+  border-radius: 3rem;
+  background-color: #6C685C;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  padding: 2rem;
+  margin-top: 2rem; }
+
+.container-login form {
+  width: 40rem;
+  padding: 2rem;
+  margin: 2rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.5rem; }
+  .container-login form label {
+    padding: 0.8rem;
+    width: 25rem; }
+
 .contenidoMont2 p {
   max-width: 100%;
   font-size: 2rem;

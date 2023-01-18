@@ -16,8 +16,13 @@ const logout = document.querySelector("#logout")
 
 //Variables para mostrar productos
 const listanormalOKS = document.querySelector(".productos-oks")
+const listaOrdenID = document.querySelector(".productos-oks-ordenID")
 const listaofertaslOKS = document.querySelector(".productos-oks-ofertas")
 const botonOfertasOKS=document.querySelector(".botonMostrar")
+
+const listadsctoOKS = document.querySelector(".productos-oks-dscto")
+const botondsctoOKS=document.querySelector(".botonDescuentos")
+
 
 // * TODO TIENEN QUE ESTAR DENTRO DE FUNCIONES
 // * LA ÚNICA VARIABLE GLOBAL VA A SER LA DEL ARRAY
@@ -39,31 +44,8 @@ const botonOfertasOKS=document.querySelector(".botonMostrar")
 // 2) una clave que le proporcione un nombre a ese valor que se suba
 
 const datosUsuario = {
-    user: "alejandro",
+    user: "alejandro@com",
     password: "ruffus22"
-}
-
-
-
-// const usuarioConEmail="alejo.gmail.com"
-// const contrasenia="12345"
-
-
-
-function validar(mail,password)
-{
-    if (mail!=datosUsuario.user && password!=datosUsuario.password){alert("Erro de login, usuario y password erroneos")
-                                                        return false
-                                                    }
-    else if (mail!=usuarioConEmail){alert("Error de login, Usuario no coincide")
-                                                        return false}
-    else if (password!=contrasenia){alert("Error de login, passsword no coincide")
-                                                        return false}
-  
-    else {alert("Bienvenido " + usuarioName)
-            return true}
-    
-
 }
 
 
@@ -141,12 +123,28 @@ formRegistro.onsubmit = ( event ) => {
     tienearroba(nuevoUser.value)
     passwordAlfanumerico(nuevoPass.value)
     passwordCantidad(nuevoPass.value)
-    alert("Felicidades " + nuevoUser.value + "!!, Su password ahora es mas seguro")
+    if ( passwordAlfanumerico(nuevoPass.value) &&   passwordAlfanumerico(nuevoPass.value) && tienearroba(nuevoUser.value))
+    {    alert("Felicidades " + nuevoUser.value + "!!, Su password ahora es mas seguro")
+    }
 
 }
 
 
+function validar(mail,password)
+{
+    if (mail!=datosUsuario.user && password!=datosUsuario.password){alert("Erro de login, usuario y password erroneos")
+                                                        return false
+                                                    }
+    else if (mail!=usuarioConEmail){alert("Error de login, Usuario no coincide")
+                                                        return false}
+    else if (password!=contrasenia){alert("Error de login, passsword no coincide")
+                                                        return false}
+  
+    else {alert("Bienvenido " + usuarioName)
+            return true}
+    
 
+}
 
 
 
@@ -170,12 +168,12 @@ formLogin.onsubmit = ( event ) => {
         subirAlLs("login", true)
         contenedorForm.style.display = "none"  
         logout.style.display = "block"      
-        contenedorPokemon.style.display = "none"        
+        listanormalOKS.style.display = "none"        
     } else {        
         loginIncorrecto.style.display = "block"
         inputPass.style.border = "1px solid red"
         inputUser.style.border = "1px solid red"
-      //  contenedorPokemon.style.display = "flex"
+        listanormalOKS.style.display = "flex"
     }
 }
 
@@ -186,11 +184,13 @@ function validarLogin ( clave ) {
     if ( clave !== true ) {
         contenedorForm.style.display = "flex"
         logout.style.display = "none"
-      //  contenedorPokemon.style.display = "none"        
+        listanormalOKS.style.display = "none"  
+        listaofertaslOKS.style.display="none"      
+        listadsctoOKS.style.display="none"
     } else {
         contenedorForm.style.display = "none"
         logout.style.display = "block"
-        contenedorPokemon.style.display = "flex"        
+        listanormalOKS.style.display = "flex"        
     }
 }
 
@@ -233,7 +233,7 @@ const productosOKS=[
 },    
 {
     "id": 32,	
-    "oferta":	false,
+    "oferta":	true,
     "producto": 	"OKS 2610",
     "descripcion" :	"Limpiador universal de evaporación sin residuos para la limpieza de componentes de máquina y superficies de los materiales.",
     "precio": 980,	
@@ -346,9 +346,9 @@ function verificaroferta()
 {
 productosOKS.forEach((elemento) => {
     if (elemento.oferta==true)
-    {   console.log("El precio base  es: " + elemento.precio)
-        dscto= prompt("El producto tiene un precio "+elemento.precio+" escriba su descuento 5, 10 o 15")
-        elemento.precio=elemento.precio*(100-dscto)/100    
+    {  
+        //dscto= prompt("El producto tiene un precio "+elemento.precio+" escriba su descuento 5, 10 o 15")
+        elemento.precio=elemento.precio*90%
         console.log("El precio con descuento " + dscto + "% es: "+ elemento.precio)
     }
     
@@ -376,15 +376,16 @@ cardsHtml(ordenaID,".productos-oks-ofertas")
 // 4) A través de un confirm, pregúntele al usuario si quiere ver las ofertas de la tienda. En el caso de que si, entonces con filter, filtre el array y que muestre en consola cada una de las ofertas.
 
 function productosenoferta(){
-let respuesta=confirm("Desea ver los productos con descuento las descuentos?")
 
-if(respuesta==true){
+
+
     const arrFiltrado = productosOKS.filter( ( curr ) => {
         return curr.oferta  === true
     })
     
-    console.table(arrFiltrado)
-}
+    cardsHtml(arrFiltrado,".productos-oks-dscto") 
+    //console.table(arrFiltrado)
+
 }
 // 5) A través de un prompt, permita al usuario buscar productos. Una vez que ingrese un producto, busquen con find dicho producto y muestrelo en un alert().
 
@@ -407,7 +408,7 @@ validarLogin(obtenerDelLs("login"))
 
 // verificaroferta()
 ordenarporid()
-// productosenoferta()
+productosenoferta()
 // buscarproducto()
 
 
@@ -434,17 +435,18 @@ function cardsHtml ( array,contenido) {
 
 }
 
-cardsHtml(productosOKS,".productos-oks")
+//cardsHtml(productosOKS,".productos-oks")
 
 
 
-// const eventoCategorias =(boton, nodo1, nodo2) => {
-//     boton.onclick=() => {
-//         nodo1.style.display="flex"
-//         nodo2.style.display="none"
-//     }
+const eventoCategorias =(boton, nodo1, nodo2) => {
+    boton.onclick=() => {
+        nodo1.style.display="flex"
+        nodo2.style.display="none"
+    }
 
-// }
+}
 
-// eventoCategorias(botonOfertasOKS,listaofertaslOKS,listanormalOKS )
+ eventoCategorias(botonOfertasOKS,listaofertaslOKS,listanormalOKS )
 
+ eventoCategorias(botondsctoOKS,listadsctoOKS,listanormalOKS )
