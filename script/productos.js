@@ -32,10 +32,9 @@ function llamarFetch(){
     const productosOKS = data
     //verificaroferta()
     ordenarporid(productosOKS)
-    //productosenoferta(productosOKS)
-
-        cardsHtml(productosOKS,".productos-oks")
-        sumarAlCarrito(productosOKS)   
+    productosenoferta(productosOKS)
+    cardsHtml(productosOKS,".productos-oks")
+    sumarAlCarrito(productosOKS)   
     //console.log(productosOKS)
 
     })
@@ -164,7 +163,7 @@ function productosenoferta(array){
     const arrFiltrado = array.filter( ( curr ) => {
         return curr.oferta  === true
     })
-    
+    console.log(arrFiltrado)
     cardsHtml(arrFiltrado,".productos-oks-dscto") 
     listadsctoOKS.style.display = "none"  
 
