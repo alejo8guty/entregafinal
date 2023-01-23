@@ -185,6 +185,8 @@ footer ul li {
   padding: 2rem;
   margin-top: 2rem; }
 
+
+
 .container-login form {
   width: 40rem;
   padding: 2rem;
@@ -197,6 +199,12 @@ footer ul li {
   .container-login form label {
     padding: 0.8rem;
     width: 25rem; }
+
+ 
+    .containter-detalles{
+      display:flex;
+      flex-direction: column;
+    }
 
 .container-img img{
   width: 30rem;

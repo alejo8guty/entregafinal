@@ -1,10 +1,4 @@
 // CASO ECOMMERCE
-// //variables de registro
-// const formRegistro = document.querySelector("#registro")
-// const nuevoUser = document.querySelector("#nuevo-user")
-// const nuevoPass = document.querySelector("#nuevo-pass")
-// const nuevoIncorrecto = document.querySelector("#nuevoint")
-
 
 //variables de logeo
 const formLogin = document.querySelector("#login")
@@ -49,106 +43,22 @@ const datosUsuario = {
     password: "pokemon23"
 }
 
+function llamarFetch(){
+    fetch("./prodoks.json")
+    .then( res => res.json())
+    .then( data => {
+    const productosOKS = data
+    //verificaroferta()
+    // ordenarporid(productosOKS)
+    // productosenoferta(productosOKS)
+        cardsHtml(productosOKS,".productos-oks")
+        sumarAlCarrito(productosOKS)   
+    //console.log(productosOKS)
 
-// function tienearroba(usuarioEmail)
-// {
+    })
+    .catch((error)=>console.log("salio mal"))
 
-// let accarroba = 0
-  
-// for ( let i = 0; i < usuarioEmail.length; i++ ) { 
-  
-//    if ( usuarioEmail[i].match(/[@]/)) {
-    
-//         accarroba=accarroba+1     
-       
-//     }
-// }
-
-// if (accarroba==0)
-// {
-//     alert("Debe ingresar un usuario un email con @ arroba")
-//     return false
-// }
-// else
-//     {
-//     return true
-//     }
-
-// }
-
-
-// function passwordAlfanumerico(usuarioPassword){
-
-//         let accnumero = 0
-
-//         for ( let i = 0; i < usuarioPassword.length; i++ )
-//          { 
-//            if ( usuarioPassword[i].match(/[0123456789]/)) {
-//             accnumero = accnumero + 1 }
-//         }
-//         console.log(accnumero)
-
-//         if (accnumero==0) 
-//         {
-        
-//         alert("Elige otra password por que este no tiene al menos un numero del 0 al 9")
-//         return true
-//         }
-//         else
-//         {
-//             return false
-//         }
-//     }
-
-
-
-// function passwordCantidad(usuarioPassword){
-
-    
-//             if (usuarioPassword.length<8)
-//             {alert("Su password debe tener al menos 8 caracteres")
-//                 return false
-//             }
-//             else
-//             {return true
-//             }
-    
-//     }
-
-
-
-
-// // usuario nuevo
-// formRegistro.onsubmit = ( event ) => {
-//     event.preventDefault()
-//     tienearroba(nuevoUser.value)
-//     passwordAlfanumerico(nuevoPass.value)
-//     passwordCantidad(nuevoPass.value)
-//     if ( passwordAlfanumerico(nuevoPass.value) &&   passwordAlfanumerico(nuevoPass.value) && tienearroba(nuevoUser.value))
-//     {    alert("Felicidades " + nuevoUser.value + "!!, Su password ahora es mas seguro")
-//     }
-
-// }
-
-
-// function validar(mail,password)
-// {
-//     if (mail!=datosUsuario.user && password!=datosUsuario.password){alert("Erro de login, usuario y password erroneos")
-//                                                         return false
-//                                                     }
-//     else if (mail!=usuarioConEmail){alert("Error de login, Usuario no coincide")
-//                                                         return false}
-//     else if (password!=contrasenia){alert("Error de login, passsword no coincide")
-//                                                         return false}
-  
-//     else {alert("Bienvenido " + usuarioName)
-//             return true}
-    
-
-// }
-
-
-
+}
 
 
 // codigo para el login
@@ -156,7 +66,7 @@ const datosUsuario = {
 const subirAlLs = ( clave, valor ) => {
     localStorage.setItem(clave, JSON.stringify(valor))
 }
-
+// consultar si esta en true
 const obtenerDelLs = ( clave ) => {
     return JSON.parse(localStorage.getItem(clave))
 }
@@ -171,26 +81,27 @@ formLogin.onsubmit = ( event ) => {
         logout.style.display = "block"      
         listanormalOKS.style.display = "block" 
 
-        fetch("./prodoks.json")
-        .then( res => res.json())
-        .then( data => {
-        const productosOKS = data
-        //verificaroferta()
-        // ordenarporid(productosOKS)
-        // productosenoferta(productosOKS)
-            cardsHtml(productosOKS,".productos-oks")
-            sumarAlCarrito(productosOKS)   
-        //console.log(productosOKS)
+        llamarFetch()
+        // fetch("./prodoks.json")
+        // .then( res => res.json())
+        // .then( data => {
+        // const productosOKS = data
+        // //verificaroferta()
+        // // ordenarporid(productosOKS)
+        // // productosenoferta(productosOKS)
+        //     cardsHtml(productosOKS,".productos-oks")
+        //     sumarAlCarrito(productosOKS)   
+        // //console.log(productosOKS)
 
-        })
-        .catch((error)=>console.log("salio mal"))
+        // })
+        // .catch((error)=>console.log("salio mal"))
 
             
     } else {        
         loginIncorrecto.style.display = "block"
         inputPass.style.border = "1px solid red"
         inputUser.style.border = "1px solid red"
-        listanormalOKS.style.display = "flex"
+        //listanormalOKS.style.display = "none"
     }
 }
 
@@ -201,14 +112,20 @@ function validarLogin ( clave ) {
     if ( clave !== true ) {
         contenedorForm.style.display = "flex"
         logout.style.display = "none"
-        listanormalOKS.style.display = "none"  
-        listaofertaslOKS.style.display="none"      
-        listadsctoOKS.style.display="none"
+        listanormalOKS.style.display = "none" 
+        botonOfertasOKS.style.display="none"
+        botondsctoOKS.style.display="none"
+        //listaofertaslOKS.style.display="none"      
+        //listadsctoOKS.style.display="none"
+        //botones de ordenamiento
     } else {
         contenedorForm.style.display = "none"
         nuevousuarioForm.style.display="none"
         logout.style.display = "block"
-        listanormalOKS.style.display = "flex"        
+        llamarFetch()
+        listanormalOKS.style.display = "block"  
+        botonOfertasOKS.style.display="block"
+        botondsctoOKS.style.display="block"      
     }
 }
 
@@ -218,6 +135,8 @@ logout.onclick = () => {
     localStorage.removeItem( "login" )
     validarLogin(obtenerDelLs("login"))
     formLogin.reset()
+    location. reload()
+
 }
 
 // 2) Utilizar un método de array que verifique si oferta es true, en el caso de que lo sea, haga un 15%, 5%, 20%, 10% de descuento (elijan el descuento que quieran).
@@ -302,16 +221,21 @@ function cardsHtml ( array,contenido) {
             <div class="container-img">
                 <img src=${itemoks.img} alt=${itemoks.producto}>
             </div>
+            <div class="containter-detalles">
             <h2>
                 ${itemoks.producto}
             </h2>
             <ul>
                 <li> Id de producto: ${itemoks.id}</li>
                 <li> Precio en USD:${itemoks.precio}</li>
+                <li> Categoria : ${itemoks.categoria}</li>
+                <li> Descripcion : ${itemoks.descripcion}</li>
+                <li> Categoria : ${itemoks.categoria}</li>
             </ul>
             <button id="boton-${itemoks.id}" class="boton-card">
                 Añadir al carrito
             </button>
+            </div>
         `
         contenedor.appendChild(card)
     })

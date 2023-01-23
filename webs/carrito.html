@@ -4,9 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carrito</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,100&display=swap" rel="stylesheet">
+
+    <!--CSS Bootstrap en nube-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+   
+        <!--CSS-->
+        <link rel="stylesheet" href="../css/main.css">
 </head>
-<body class="fondomainmontaje">
+<body class="fondomainmontaje"> <!-- Todo el sitio, lo que se ve de la pagina-->
+
+    <!--Contenedor padre para index-->
+
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img class="logoCabecera" src="../imagenes/GAMMA_SOL-LOGO.png" alt="Logo de Gamma" width="180px"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <button id="boton-oscuro">
+                ModoOscuro
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav d-flex">
+                  <a class="nav-link" href="../index.html">Home</a>
+                  <a class="nav-link active" aria-current="page" href="../webs/tienda.html">Tienda</a>
+                  <a class="nav-link" href="../webs/limpiadores.html">limpiadores</a>
+                  <!-- <a class="nav-link" href="../webs/montajeydesmontaje.html">Montaje y desmontaje</a>-->
+                   <a class="nav-link" href="../webs/mttocadenas.html">Mtto Cadenas</a>
+                  <a class="nav-link" href="../webs/contacto.html">contacto</a>
+                </div>
+              </div>
+              <button id="logout">
+                Cerrar sesión
+            </button> 
+            <button id="carritoCompras">
+                <a href="./carrito.html">Carrito</a>
+            </button> 
+            </div>
+          </nav> 
 <a href="./tienda.html">Clic para tienda</a>
 <button id="borrar-carrito">borrar carrito</button>
    
@@ -17,7 +57,8 @@
 <div class="contenedor-sumatoria">
 </div>
 
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
 <script src="../script/carrito.js"></script>
 <script src="../script/ModoOscuro.js"></script>
 </body>
