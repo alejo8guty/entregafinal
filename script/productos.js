@@ -11,32 +11,14 @@ const logout = document.querySelector("#logout")
 
 //Variables para mostrar productos
 const listanormalOKS = document.querySelector(".productos-oks")
-const listaOrdenID = document.querySelector(".productos-oks-ordenID")
-const listaofertaslOKS = document.querySelector(".productos-oks-ofertas")
-const botonOfertasOKS=document.querySelector(".botonMostrar")
-
+//Variables para mostrar productos ordenados por ID
+const listaOrdenID = document.querySelector(".productos-oks-id")
+const botonidOKS=document.querySelector(".botonMostrar-ID")
+//Variables para mostrar productos con descuento
 const listadsctoOKS = document.querySelector(".productos-oks-dscto")
-const botondsctoOKS=document.querySelector(".botonDescuentos")
+const botondsctoOKS=document.querySelector(".botonMostrar-descuento")
 
 
-// * TODO TIENEN QUE ESTAR DENTRO DE FUNCIONES
-// * LA ÚNICA VARIABLE GLOBAL VA A SER LA DEL ARRAY
-// * EL ARRAY DE OBJETOS PUEDE ESTAR EN EL MISMO CÓDIGO O EN OTRO ARCHIVO
-
-// 1) Hacer un array de objetos que tenga 15 productos. Cada objeto deberá tener las siguientes propiedades:
-//     - id
-//     - producto
-//     - precio
-//     - fechaVencimiento (en el caso de que tenga una)
-//     - descripción
-//     - categoría (si tiene una)
-//     - oferta (booleano)
-
-// Quiero que algunos de los elementos tengan un true en oferta.
-
-// para hacer una función que nos sirva para subir valores al ls
-// 1) un valor a convertir con JSON.stringify
-// 2) una clave que le proporcione un nombre a ese valor que se suba
 
 const datosUsuario = {
     user: "carola@com",
@@ -49,8 +31,9 @@ function llamarFetch(){
     .then( data => {
     const productosOKS = data
     //verificaroferta()
-    // ordenarporid(productosOKS)
-    // productosenoferta(productosOKS)
+    ordenarporid(productosOKS)
+    //productosenoferta(productosOKS)
+
         cardsHtml(productosOKS,".productos-oks")
         sumarAlCarrito(productosOKS)   
     //console.log(productosOKS)
@@ -82,19 +65,6 @@ formLogin.onsubmit = ( event ) => {
         listanormalOKS.style.display = "block" 
 
         llamarFetch()
-        // fetch("./prodoks.json")
-        // .then( res => res.json())
-        // .then( data => {
-        // const productosOKS = data
-        // //verificaroferta()
-        // // ordenarporid(productosOKS)
-        // // productosenoferta(productosOKS)
-        //     cardsHtml(productosOKS,".productos-oks")
-        //     sumarAlCarrito(productosOKS)   
-        // //console.log(productosOKS)
-
-        // })
-        // .catch((error)=>console.log("salio mal"))
 
             
     } else {        
@@ -113,7 +83,8 @@ function validarLogin ( clave ) {
         contenedorForm.style.display = "flex"
         logout.style.display = "none"
         listanormalOKS.style.display = "none" 
-        botonOfertasOKS.style.display="none"
+
+        botonidOKS.style.display="none"
         botondsctoOKS.style.display="none"
         //listaofertaslOKS.style.display="none"      
         //listadsctoOKS.style.display="none"
@@ -124,7 +95,7 @@ function validarLogin ( clave ) {
         logout.style.display = "block"
         llamarFetch()
         listanormalOKS.style.display = "block"  
-        botonOfertasOKS.style.display="block"
+        botonidOKS.style.display="block"
         botondsctoOKS.style.display="block"      
     }
 }
@@ -137,6 +108,18 @@ logout.onclick = () => {
     formLogin.reset()
     location. reload()
 
+}
+
+botonidOKS.onclick=()=>{
+    listanormalOKS.style.display = "none"  
+    listadsctoOKS.style.display = "none"  
+    listaOrdenID.style.display = "block"  
+}
+
+botondsctoOKS.onclick=()=>{
+    listanormalOKS.style.display = "none"
+    listaOrdenID.style.display = "none"    
+    listadsctoOKS.style.display = "block"  
 }
 
 // 2) Utilizar un método de array que verifique si oferta es true, en el caso de que lo sea, haga un 15%, 5%, 20%, 10% de descuento (elijan el descuento que quieran).
@@ -165,7 +148,8 @@ function ordenarporid(array)
 const ordenaID=[...array].sort((a, b) => {
     return a.id-b.id
 })
-cardsHtml(ordenaID,".productos-oks-ofertas")
+cardsHtml(ordenaID,".productos-oks-id")
+listaOrdenID.style.display = "none"  
 }
 
 
@@ -182,7 +166,7 @@ function productosenoferta(array){
     })
     
     cardsHtml(arrFiltrado,".productos-oks-dscto") 
-    //console.table(arrFiltrado)
+    listadsctoOKS.style.display = "none"  
 
 }
 // 5) A través de un prompt, permita al usuario buscar productos. Una vez que ingrese un producto, busquen con find dicho producto y muestrelo en un alert().
@@ -204,10 +188,7 @@ function buscarproducto(){
 validarLogin(obtenerDelLs("login"))
 
 
-// verificaroferta()
-//ordenarporid()
-//productosenoferta()
-// buscarproducto()
+
 
 
 function cardsHtml ( array,contenido) {
@@ -216,7 +197,7 @@ function cardsHtml ( array,contenido) {
 
     array.forEach( ( itemoks ) => {
         const card = document.createElement("div")
-        card.className = "card"
+        card.className = "card-compra"
         card.innerHTML = `
             <div class="container-img">
                 <img src=${itemoks.img} alt=${itemoks.producto}>

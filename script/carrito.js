@@ -32,13 +32,16 @@ console.log(prodcarrito)
 const cardsHtml = ( array ) => {
     const generarNodos = array.reduce(( acc, element) => {
         return acc + `
-            <div class="card" id="OKS-${element.id}">
+            <div class="card-carrito" id="OKS-${element.id}">
                 <div class="container-img">
                     <img src=${element.img} alt=${element.producto}>
                 </div>                
                 <h2>
                     ${element.producto}
                 </h2>
+                <h3>
+                El precio en USD: ${element.precio}
+                </h3>
                 <button id="boton-${element.id}" class="boton-card">
                     Eliminar del carrito
                 </button>
@@ -79,9 +82,10 @@ botonBorrarCarrito.onclick=()=>{
     localStorage.removeItem("carrito")
     document.querySelector(".contenedor-carrito").innerHTML= "Se borro el carrito"
 }
-let sumatotal=0
+
 const botonSumarCarrito=document.querySelector("#sumar-carrito")
 botonSumarCarrito.onclick=()=>{
+    let sumatotal=0
     prodcarrito.forEach(element => {
          //sumatotal=sumatotal+element.precio
          console.log(typeof(element.precio))
@@ -89,5 +93,5 @@ botonSumarCarrito.onclick=()=>{
          //console.log(sumatotal)
     });
 
-    document.querySelector(".contenedor-sumatoria").innerHTML= "El total es" +sumatotal
+    document.querySelector(".contenedor-sumatoria").innerHTML= "El total es USD " +sumatotal
 }
